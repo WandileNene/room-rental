@@ -281,7 +281,7 @@ export default function ListingDetailsPage({
             latitude: payload.approximate_latitude,
             longitude: payload.approximate_longitude,
           });
-        } else {
+        } else if (payload.has_map_location === true) {
           setIsLoadingMapLocation(true);
           try {
             const location = await getPublicListingMapLocation(
